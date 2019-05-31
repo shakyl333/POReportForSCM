@@ -1,0 +1,132 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "POReportForSCM.POReportForSCM",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZSM_PO_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSM_PO_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "POReportForSCM.POReportForSCM.view.V_Root_View",
+			"type": "XML",
+			"async": true,
+			"id": "V_Root_View"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "POReportForSCM.POReportForSCM.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSM_PO_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "POReportForSCM.POReportForSCM.view",
+				"controlAggregation": "pages",
+				"controlId": "V_Root",
+				"clearControlAggregation": false,
+				"viewLevel": 1
+			},
+			"routes": [{
+				"name": "Route_POHeader",
+				"pattern": "",
+				"target": ["Traget_POHeader"]
+			}, {
+				"name": "Route_PODetail",
+				"pattern": "POHeaderSet{SelectedItem}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Traget_PODetail"]
+			}],
+			"targets": {
+				"TargetV_Root_View": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "V_Root_View",
+					"viewName": "V_Root_View"
+				},
+				"Traget_POHeader": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "V_POHeader",
+					"viewLevel": 1
+				},
+				"Traget_PODetail": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "V_PODetail",
+					"viewLevel": 2
+				}
+			}
+		}
+	}
+}

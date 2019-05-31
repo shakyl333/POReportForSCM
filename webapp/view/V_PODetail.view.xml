@@ -1,0 +1,19 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="POReportForSCM.POReportForSCM.controller.V_PODetail">
+	<App>
+		<pages>
+			<Page title="Purchase Order Details">
+				<content>
+				    <VBox width="100%" direction="Column" id="vbox0">
+				        <items>
+				            <Text xmlns="sap.m" text="PO Number {Ebeln}" id="text0"/>
+				            <Text xmlns="sap.m" id="text4" text="Company Code {Bukrs}"/>
+				            <Text xmlns="sap.m" text="PO type {Bsart}" id="text1"/>
+				            <Text xmlns="sap.m" text="Payment terms {Zterm}" id="text3"/>
+				            <Text xmlns="sap.m" text="Created by {Ernam}" id="text2"/>
+				        </items>
+				    </VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
