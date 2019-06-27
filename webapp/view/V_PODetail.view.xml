@@ -1,7 +1,7 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="POReportForSCM.POReportForSCM.controller.V_PODetail">
 	<App>
 		<pages>
-			<Page title="Purchase Order Details">
+			<Page title="Purchase Order Details" showNavButton="true" navButtonPress="GoToPOHeader">
 				<content>
 				    <VBox width="100%" direction="Column" id="vbox0">
 				        <items>
@@ -12,6 +12,7 @@
 				            <Text xmlns="sap.m" text="Created by {Ernam}" id="text2"/>
 				        </items>
 				    </VBox>
+				    <Button xmlns="sap.m" text="Show PO Item" id="button0" icon="sap-icon://arrow-right" press="GoToPOItem"/>
 				</content>
 			</Page>
 		</pages>

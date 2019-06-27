@@ -103,6 +103,12 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["Traget_PODetail"]
+			}, {
+				"name": "Route_Item",
+				"pattern": "SelectedPO",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Target_Item"]
 			}],
 			"targets": {
 				"TargetV_Root_View": {
@@ -125,6 +131,17 @@
 					"clearControlAggregation": false,
 					"viewName": "V_PODetail",
 					"viewLevel": 2
+				},
+				"V_POItem": {
+					"viewType": "XML",
+					"viewName": "V_POItem"
+				},
+				"Target_Item": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "V_POItem",
+					"viewLevel": 3
 				}
 			}
 		}
